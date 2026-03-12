@@ -1,7 +1,5 @@
 ---
 import "../styles/global.css";
-import "@fontsource-variable/inter/wght.css";
-import "@fontsource-variable/montserrat/wght.css";
 
 interface Props {
   title?: string;
@@ -18,6 +16,17 @@ const {
 const canonicalURL = Astro.site
   ? new URL(Astro.url.pathname, Astro.site)
   : Astro.url;
+
+const { pathname } = Astro.url;
+
+const NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -42,14 +51,41 @@ const canonicalURL = Astro.site
     <title>{title}</title>
   </head>
   <body>
-    <header>
-      <slot name="header" />
-    </header>
-    <main>
-      <slot />
-    </main>
-    <footer>
-      <slot name="footer" />
-    </footer>
+    <div class="min-h-screen bg-background">
+      <div class="mx-auto max-w-column px-6 py-12 md:py-16">
+        <header class="mb-12">
+          <nav>
+            <ul class="flex flex-wrap gap-x-6 gap-y-1 list-none p-0 m-0">
+              {NAV_LINKS.map(({ href, label }) => {
+                const isActive = pathname === href;
+                return (
+                  <li class="m-0">
+                    <a
+                      href={href}
+                      class={isActive
+                        ? "no-underline font-serif text-foreground font-medium cursor-default"
+                        : "font-serif text-accent hover:text-foreground"}
+                      aria-current={isActive ? "page" : undefined}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </header>
+
+        <main>
+          <slot />
+        </main>
+
+        <footer class="mt-16 pt-8 border-t border-border">
+          <p class="font-mono text-sm text-muted-foreground m-0">
+            Sergio Y. Lee &mdash; {year}
+          </p>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>

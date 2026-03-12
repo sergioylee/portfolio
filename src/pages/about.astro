@@ -3,4 +3,69 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="About — Sergio Y. Lee" description="About Sergio Y. Lee.">
+  <h1 class="font-serif mb-10">About</h1>
+
+  <section class="mb-10">
+    <p>
+      I'm a software engineer with 11 years of professional experience. I've worked on
+      compilers, distributed systems, operating system kernels, and developer tooling. Most of
+      my work has been in C, C++, Go, and Rust.
+    </p>
+    <p>
+      I started programming because I wanted to understand how computers actually work. That
+      hasn't changed. I still spend a meaningful fraction of my time reading CPU architecture
+      manuals, disassembling binaries, and writing programs that have to be fast because the
+      problem demands it, not because I was bored.
+    </p>
+    <p>
+      I've shipped production systems used by millions of people and written internal tools used
+      by no one but me. Both matter. The standard I hold myself to is: does it work correctly,
+      is it as simple as it can be, and could someone else maintain it in three years?
+    </p>
+  </section>
+
+  <hr />
+
+  <section class="mb-10">
+    <h2 class="font-serif mb-4">Experience</h2>
+    <div class="space-y-6">
+      <div>
+        <p class="font-mono text-sm text-muted-foreground mb-1">2021 – present</p>
+        <p class="font-medium mb-0">Staff Engineer — Acme Systems</p>
+        <p class="text-muted-foreground text-sm mt-1">
+          Led the redesign of the core query execution engine. Reduced p99 latency by 60% by
+          replacing a tree-walking interpreter with a vectorized columnar execution model.
+        </p>
+      </div>
+      <div>
+        <p class="font-mono text-sm text-muted-foreground mb-1">2017 – 2021</p>
+        <p class="font-medium mb-0">Senior Engineer — Kernel &amp; Runtime Team, Corp Inc.</p>
+        <p class="text-muted-foreground text-sm mt-1">
+          Worked on the Linux kernel module for the company's proprietary RDMA networking stack.
+          Wrote device drivers, managed DMA, and fixed subtle races in interrupt handlers.
+        </p>
+      </div>
+      <div>
+        <p class="font-mono text-sm text-muted-foreground mb-1">2013 – 2017</p>
+        <p class="font-medium mb-0">Software Engineer — Compiler Team, Tech Co.</p>
+        <p class="text-muted-foreground text-sm mt-1">
+          Maintained and extended an LLVM-based compiler for an embedded DSP architecture.
+          Implemented new optimization passes and fixed register allocator bugs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <section>
+    <h2 class="font-serif mb-4">Skills</h2>
+    <p class="font-mono text-sm text-muted-foreground leading-relaxed">
+      C &nbsp;/&nbsp; C++ &nbsp;/&nbsp; Go &nbsp;/&nbsp; Rust &nbsp;/&nbsp;
+      x86-64 assembly &nbsp;/&nbsp; Linux &nbsp;/&nbsp; LLVM &nbsp;/&nbsp;
+      POSIX &nbsp;/&nbsp; TCP/IP &nbsp;/&nbsp; gRPC &nbsp;/&nbsp;
+      Raft &nbsp;/&nbsp; DWARF &nbsp;/&nbsp; perf &nbsp;/&nbsp;
+      valgrind &nbsp;/&nbsp; GDB &nbsp;/&nbsp; Git
+    </p>
+  </section>
 </Layout>

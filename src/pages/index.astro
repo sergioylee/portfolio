@@ -3,5 +3,48 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Sergio Y. Lee">
-  <h1>Hello, World!</h1>
+  <h1 class="font-serif text-foreground mb-1">Your Name</h1>
+  <p class="font-mono text-sm text-muted-foreground mb-10">
+    Software Engineer &mdash; Systems, Compilers, Performance
+  </p>
+
+  <p>
+    I write software for a living. I've been doing this for over a decade, mostly in the layers
+    of the stack that most people prefer to ignore: runtimes, compilers, operating systems, and
+    anything that runs close to the metal.
+  </p>
+
+  <p>
+    I care about correctness first, then speed. I don't use frameworks unless they solve a
+    problem I actually have. I ship things that work.
+  </p>
+
+  <p>
+    This site is a record of what I've built, what I've learned, and where I stand. No
+    buzzwords, no brand.
+  </p>
+
+  <hr />
+
+  <section>
+    <h2 class="font-serif mb-4">Recent work</h2>
+    <ul>
+      <li>
+        <a href="/work#raft">Distributed key-value store with Raft consensus</a>
+        <span class="font-mono text-sm text-muted-foreground ml-2">2024</span>
+      </li>
+      <li>
+        <a href="/work#jit">JIT compiler for a custom bytecode VM</a>
+        <span class="font-mono text-sm text-muted-foreground ml-2">2023</span>
+      </li>
+      <li>
+        <a href="/work#allocator">Custom memory allocator replacing system malloc</a>
+        <span class="font-mono text-sm text-muted-foreground ml-2">2023</span>
+      </li>
+      <li>
+        <a href="/work#profiler">Sampling profiler for Linux user-space processes</a>
+        <span class="font-mono text-sm text-muted-foreground ml-2">2022</span>
+      </li>
+    </ul>
+  </section>
 </Layout>
