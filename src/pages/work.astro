@@ -1,25 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { SITE } from "../config";
-
-const projects = [
-  {
-    id: "raft",
-    title: "Distributed key-value store with Raft consensus",
-    date: "2024",
-    stack: "Go, Protocol Buffers, gRPC",
-    bullets: [
-      "Built a linearizable key-value store across a cluster of nodes from scratch.",
-      "Implemented the full Raft log replication protocol: leader election, log matching, snapshotting.",
-      "Solved split-brain scenarios by enforcing strict quorum reads and lease-based leader elections.",
-      "Achieved 95th-percentile write latency of 3ms at 10,000 ops/sec on commodity hardware.",
-      "No third-party consensus library used. The whole protocol fits in roughly 2,000 lines of Go.",
-    ],
-  },
-];
+import { site } from "../data/site";
+import { projects } from "../data/projects";
 ---
 
-<Layout title={`Work — ${SITE.name}`} description={`Projects and work by ${SITE.name}.`}>
+<Layout title={`Work — ${site.name}`} description={`Projects and work by ${site.name}.`}>
   <h1 class="font-serif mb-2">Work</h1>
   <p class="text-muted-foreground mb-10">
     Projects I've built. Listed in reverse chronological order.

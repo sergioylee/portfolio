@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { SITE } from "../config";
+import { site } from "../data/site";
 
 interface Props {
   title?: string;
@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-  title = SITE.name,
-  description = `Welcome to ${SITE.name}'s portfolio`,
+  title = site.name,
+  description = `Welcome to ${site.name}'s portfolio`,
   ogImage = "/og.png",
 } = Astro.props;
 
@@ -36,7 +36,7 @@ const year = new Date().getFullYear();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="author" content={SITE.name} />
+    <meta name="author" content={site.name} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalURL} />
 
@@ -47,7 +47,7 @@ const year = new Date().getFullYear();
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(ogImage, Astro.site ?? Astro.url)} />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:site_name" content={site.name} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -96,7 +96,7 @@ const year = new Date().getFullYear();
 
         <footer class="mt-16 pt-8 border-t border-border">
           <p class="font-mono text-sm text-muted-foreground m-0">
-            &copy; {year} {SITE.name}
+            &copy; {year} {site.name}
           </p>
         </footer>
       </div>

@@ -1,27 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { SITE } from "../config";
+import { site } from "../data/site";
 ---
 
-<Layout title={`About — ${SITE.name}`} description={`About ${SITE.name}.`}>
+<Layout title={`About — ${site.name}`} description={`About ${site.name}.`}>
   <h1 class="font-serif mb-10">About</h1>
 
   <section class="mb-10">
     <p>
-      I'm a software engineer with 11 years of professional experience. I've worked on
-      compilers, distributed systems, operating system kernels, and developer tooling. Most of
-      my work has been in C, C++, Go, and Rust.
+      I'm a software engineer with around four years of professional experience, mostly building
+      web applications in C# and JavaScript or one of its many cousins.
     </p>
     <p>
-      I started programming because I wanted to understand how computers actually work. That
-      hasn't changed. I still spend a meaningful fraction of my time reading CPU architecture
-      manuals, disassembling binaries, and writing programs that have to be fast because the
-      problem demands it, not because I was bored.
+      Got into web development back when I was running a small business and got tired
+      of answering the same customer questions and sharing a single Excel file with everyone
+      for stock and orders. So I built something. It wasn't very good, but it got the job done. That's still how I like to approach software.
     </p>
     <p>
-      I've shipped production systems used by millions of people and written internal tools used
-      by no one but me. Both matter. The standard I hold myself to is: does it work correctly,
-      is it as simple as it can be, and could someone else maintain it in three years?
+      Since then I've shipped production systems used by thousands of people and internal
+      tools used by nobody but me. Both matter, as long as something real is getting solved.
+      Although more often than I'd want to admit, what's getting solved is just my boredom.
+    </p>
+    <p>
+      I'm one of those lucky people who can make a living out of their hobby.
+      And as any other hobby, it's better shared. I enjoy working through hard
+      problems with other passionate people.
+      Specially if they are as paranoid with format, simplicity and speed as I am :).
     </p>
   </section>
 

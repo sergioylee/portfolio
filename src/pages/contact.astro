@@ -1,13 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { SITE } from "../config";
+import { site } from "../data/site";
 ---
 
-<Layout title={`Contact — ${SITE.name}`} description=`Get in touch with ${SITE.name}.`>
+<Layout title={`Contact — ${site.name}`} description=`Get in touch with ${site.name}.`>
   <h1 class="font-serif mb-10">Contact</h1>
 
   <p>
-    I'm not looking for work right now, but I'm happy to talk about interesting technical
+    I'm not looking for work right now, but I'm always happy to talk about interesting technical
     problems and opportunities.
   </p>
 
@@ -18,28 +18,28 @@ import { SITE } from "../config";
       <div class="flex gap-4 items-baseline">
         <dt class="font-mono text-sm text-muted-foreground w-20 shrink-0">Email</dt>
         <dd class="m-0">
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          <a href={`mailto:${site.email}`}>{site.email}</a>
         </dd>
       </div>
       <div class="flex gap-4 items-baseline">
         <dt class="font-mono text-sm text-muted-foreground w-20 shrink-0">GitHub</dt>
         <dd class="m-0">
-          <a href={`https://github.com/${SITE.github}`} target="_blank" rel="noopener noreferrer">
-            github.com/{SITE.github}
+          <a href={`https://github.com/${site.github}`} target="_blank" rel="noopener noreferrer">
+            github.com/{site.github}
           </a>
         </dd>
       </div>
       <div class="flex gap-4 items-baseline">
         <dt class="font-mono text-sm text-muted-foreground w-20 shrink-0">LinkedIn</dt>
         <dd class="m-0">
-          <a href={`https://linkedin.com/in/${SITE.linkedin}`} target="_blank" rel="noopener noreferrer">
-            linkedin.com/in/{SITE.linkedin}
+          <a href={`https://linkedin.com/in/${site.linkedin}`} target="_blank" rel="noopener noreferrer">
+            linkedin.com/in/{site.linkedin}
           </a>
         </dd>
       </div>
       <div class="flex gap-4 items-baseline">
         <dt class="font-mono text-sm text-muted-foreground w-20 shrink-0">Location</dt>
-        <dd class="m-0 font-mono text-sm text-muted-foreground">{SITE.location}</dd>
+        <dd class="m-0 font-mono text-muted-foreground">{site.location}</dd>
       </div>
     </dl>
   </section>

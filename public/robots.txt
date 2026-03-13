@@ -39,4 +39,3 @@ User-agent: YouBot
 Disallow: /
 
 Sitemap: https://sergioylee.com/sitemap-index.xml
-
