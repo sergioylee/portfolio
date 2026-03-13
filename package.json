@@ -19,7 +19,6 @@
     "@astrojs/sitemap": "3.7.1",
     "@fontsource/ibm-plex-mono": "5.2.7",
     "@fontsource/ibm-plex-serif": "5.2.7",
-    "@lucide/astro": "0.575.0",
     "@tailwindcss/vite": "4.2.1",
     "astro": "5.16.16",
     "tailwindcss": "4.2.1"
