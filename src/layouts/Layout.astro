@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { SITE } from "../config";
 
 interface Props {
   title?: string;
@@ -8,8 +9,8 @@ interface Props {
 }
 
 const {
-  title = "Sergio Y. Lee",
-  description = "Welcome to Sergio Y. Lee's portfolio",
+  title = SITE.name,
+  description = `Welcome to ${SITE.name}'s portfolio`,
   ogImage = "/og.png",
 } = Astro.props;
 

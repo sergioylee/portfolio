@@ -1,27 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { SITE } from "../config";
 ---
 
-<Layout title="Sergio Y. Lee">
-  <h1 class="font-serif text-foreground mb-1">Sergio Y. Lee</h1>
+<Layout title={`${SITE.name}`}>
+  <h1 class="font-serif text-foreground mb-1">{SITE.name}</h1>
   <p class="font-mono text-sm text-muted-foreground mb-10">
-    Software Engineer &mdash; Systems, Compilers, Performance
+    Software Engineer &mdash; {SITE.location}
   </p>
 
   <p>
-    I write software for a living. I've been doing this for over a decade, mostly in the layers
-    of the stack that most people prefer to ignore: runtimes, compilers, operating systems, and
-    anything that runs close to the metal.
+    I write software for a living. My background is in hardware though, electronics engineering
+    and building custom PCs in Buenos Aires. At some point I traded screwdrivers for
+    keyboards and never looked back (maybe from time to time).
   </p>
-
   <p>
-    I care about correctness first, then speed. I don't use frameworks unless they solve a
-    problem I actually have. I ship things that work.
+    I care about the software I write and the businesses I work for. I try to keep things
+    simple, correct, and conscious about the metal underneath. I've worked across the stack
+    in small teams, taken ownership from start to finish, and led through the kind of
+    restructuring that makes everyone nervous: from legacy WCF services nobody wanted to
+    touch, to fancy corporate architectures.
   </p>
-
   <p>
-    This site is a record of what I've built, what I've learned, and where I stand. No
-    buzzwords, no brand.
+    I appreciate software that is open, transparent, and honest with its users. Fast,
+    minimal, private, and built to last. The old-school kind.
+  </p>
+  <p>
+    This site is a record of what I've built and where I stand. No buzzwords, no crap, no AI.
   </p>
 
   <hr />
@@ -32,18 +37,6 @@ import Layout from "../layouts/Layout.astro";
       <li>
         <a href="/work#raft">Distributed key-value store with Raft consensus</a>
         <span class="font-mono text-sm text-muted-foreground ml-2">2024</span>
-      </li>
-      <li>
-        <a href="/work#jit">JIT compiler for a custom bytecode VM</a>
-        <span class="font-mono text-sm text-muted-foreground ml-2">2023</span>
-      </li>
-      <li>
-        <a href="/work#allocator">Custom memory allocator replacing system malloc</a>
-        <span class="font-mono text-sm text-muted-foreground ml-2">2023</span>
-      </li>
-      <li>
-        <a href="/work#profiler">Sampling profiler for Linux user-space processes</a>
-        <span class="font-mono text-sm text-muted-foreground ml-2">2022</span>
       </li>
     </ul>
   </section>

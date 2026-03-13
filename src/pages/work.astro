@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { SITE } from "../config";
 
 const projects = [
   {
@@ -15,52 +16,13 @@ const projects = [
       "No third-party consensus library used. The whole protocol fits in roughly 2,000 lines of Go.",
     ],
   },
-  {
-    id: "jit",
-    title: "JIT compiler for a custom bytecode VM",
-    date: "2023",
-    stack: "C, x86-64 assembly, POSIX mmap",
-    bullets: [
-      "Designed a register-based bytecode format for a dynamically typed scripting language.",
-      "Wrote a tracing JIT that detects hot loops and compiles them directly to x86-64 machine code at runtime.",
-      "Handled type specialization and deoptimization: compiled fast paths bail out to the interpreter on type mismatches.",
-      "Resulted in a 12–18× speedup over pure interpretation on compute-bound workloads.",
-      "The JIT compiler itself is around 3,500 lines of C with no external codegen dependencies.",
-    ],
-  },
-  {
-    id: "allocator",
-    title: "Custom memory allocator replacing system malloc",
-    date: "2023",
-    stack: "C, Linux, perf, valgrind",
-    bullets: [
-      "Built a general-purpose allocator based on size-class segregation and per-thread caches to eliminate lock contention.",
-      "Reduced allocation overhead by 40% compared to glibc malloc on a multi-threaded server workload.",
-      "Implemented a background thread for deferred coalescing and page return to the OS.",
-      "Used perf and valgrind massif to profile and validate memory behavior under load.",
-      "Passes the full dlmalloc test suite and handles edge cases including large allocations and alignment requirements.",
-    ],
-  },
-  {
-    id: "profiler",
-    title: "Sampling profiler for Linux user-space processes",
-    date: "2022",
-    stack: "C++, Linux perf_event_open, DWARF, libunwind",
-    bullets: [
-      "Attaches to an arbitrary running process and samples its call stack at configurable intervals using perf_event_open.",
-      "Walks the stack using libunwind and resolves symbols from DWARF debug info without pausing the target process.",
-      "Outputs collapsed stack traces compatible with Brendan Gregg's FlameGraph tooling.",
-      "Handles inline functions, shared libraries, and JIT'd code with custom symbol registration.",
-      "Overhead under 1% CPU at 1000 Hz sample rate on a heavily loaded system.",
-    ],
-  },
 ];
 ---
 
-<Layout title="Work — Sergio Y. Lee" description="Projects and work by Sergio Y. Lee.">
+<Layout title={`Work — ${SITE.name}`} description={`Projects and work by ${SITE.name}.`}>
   <h1 class="font-serif mb-2">Work</h1>
   <p class="text-muted-foreground mb-10">
-    Projects I've built. Listed in reverse chronological order. Just the facts.
+    Projects I've built. Listed in reverse chronological order.
   </p>
 
   <div class="space-y-12">

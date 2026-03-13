@@ -143,6 +143,7 @@ body {
     margin-bottom: 1.25rem;
     color: hsl(var(--foreground));
     overflow-wrap: break-word;
+    text-align: justify;
   }
 
   a {
