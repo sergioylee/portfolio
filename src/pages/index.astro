@@ -1,6 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { SITE } from "../config";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE.name,
+  url: Astro.site?.toString(),
+  email: `mailto:${SITE.email}`,
+  jobTitle: "Software Engineer",
+  sameAs: [
+    `https://github.com/${SITE.github}`,
+    `https://linkedin.com/in/${SITE.linkedin}`,
+  ],
+};
 ---
 
 <Layout title={`${SITE.name}`}>
@@ -40,4 +53,5 @@ import { SITE } from "../config";
       </li>
     </ul>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 </Layout>
