@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { site } from "../data/site";
 import { projects } from "../data/projects";
+import { site } from "../data/site";
+import Layout from "../layouts/Layout.astro";
 
 const recentProjects = projects.slice(0, 5);
 
@@ -58,5 +58,5 @@ const schema = {
       ))}
     </ul>
   </section>
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
 </Layout>
