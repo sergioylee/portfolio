@@ -4,7 +4,7 @@ import { projects } from "../data/projects";
 import { site } from "../data/site";
 import Layout from "../layouts/Layout.astro";
 
-const recentPosts = (await getCollection("blog", ({ data }) => !data.draft))
+const recentPosts = (await getCollection("blogs", ({ data }) => !data.draft))
   .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
   .slice(0, 5);
 
