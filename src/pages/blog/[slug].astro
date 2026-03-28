@@ -4,21 +4,45 @@ import { site } from "../../data/site";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blogs", ({ data }) => !data.draft);
-  return posts.map((post) => ({
+  const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort(
+    (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
+  );
+  return posts.map((post, i) => ({
     params: { slug: post.id.replace(/\.md$/, "") },
-    props: { post },
+    props: {
+      post,
+      prev: posts[i + 1] ?? null,
+      next: posts[i - 1] ?? null,
+    },
   }));
 }
 
-const { post } = Astro.props;
+const { post, prev, next } = Astro.props;
 const { Content } = await render(post);
 ---
 
 <Layout title={`${post.data.title} — ${site.name}`} description={post.data.summary}>
   <article>
     <h1 class="font-serif mb-1">{post.data.title}</h1>
-    <p class="font-mono text-sm text-muted-foreground mt-0 mb-10">{post.data.date}</p>
+    <p class="font-mono text-sm text-muted-foreground mt-0 mb-1">{post.data.date}</p>
+    <p class="font-mono text-sm text-muted-foreground mt-0 mb-10">By {site.name}</p>
     <Content />
   </article>
+
+  <nav aria-label="Post navigation" class="mt-16 pt-8 flex justify-between gap-4">
+    <div>
+      {prev && (
+        <a href={`/blog/${prev.id.replace(/\.md$/, "")}`} class="font-mono text-sm text-muted-foreground no-underline hover:text-secondary">
+          &larr; {prev.data.title}
+        </a>
+      )}
+    </div>
+    <div>
+      {next && (
+        <a href={`/blog/${next.id.replace(/\.md$/, "")}`} class="font-mono text-sm text-muted-foreground no-underline hover:text-secondary">
+          {next.data.title} &rarr;
+        </a>
+      )}
+    </div>
+  </nav>
 </Layout>
