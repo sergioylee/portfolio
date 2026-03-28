@@ -14,6 +14,7 @@ export const projects: Project[] = [
     date: "2026",
     stack: "Astro, TailwindCSS, DaisyUI",
     bullets: [],
+    url: "https://github.com/industriasproba/industriasproba-web",
   },
   {
     id: "portfolio",
@@ -25,6 +26,7 @@ export const projects: Project[] = [
       "No analytics, no trackers, no unnecessary JavaScript.",
       "Hosted on Cloudflare Pages.",
     ],
+    url: "https://github.com/sergioylee/portfolio",
   },
   {
     id: "lens-nvim",
@@ -32,6 +34,7 @@ export const projects: Project[] = [
     date: "2025",
     stack: "Lua",
     bullets: [],
+    url: "https://github.com/sergioylee/lens.nvim",
   },
   {
     id: "resumint",
