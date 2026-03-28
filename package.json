@@ -16,7 +16,6 @@
     "typecheck": "astro check"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.7.1",
     "@fontsource/ibm-plex-mono": "5.2.7",
     "@fontsource/ibm-plex-serif": "5.2.7",
     "@tailwindcss/vite": "4.2.1",
@@ -24,6 +23,7 @@
     "tailwindcss": "4.2.1"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "3.7.1",
     "@astrojs/check": "0.9.7",
     "@biomejs/biome": "2.4.6"
   }
