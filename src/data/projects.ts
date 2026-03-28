@@ -4,6 +4,7 @@ export interface Project {
   date: string;
   stack: string;
   bullets: string[];
+  url?: string;
 }
 
 export const projects: Project[] = [
