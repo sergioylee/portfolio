@@ -30,32 +30,4 @@ import Layout from "../layouts/Layout.astro";
     </p>
   </section>
 
-  <hr />
-
-  <section class="mb-10">
-    <h2 class="font-serif mb-4">Experience</h2>
-    <div class="space-y-6">
-      {experience.map((entry) => (
-        <div>
-          <p class="font-mono text-sm text-muted-foreground mb-1">{entry.period}</p>
-          <p class="font-medium mb-0">{entry.title}</p>
-          <p class="text-muted-foreground text-sm mt-1">{entry.description}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <section class="mb-10">
-    <h2 class="font-serif mb-4">Education</h2>
-    <div class="space-y-6">
-      {education.map((entry) => (
-        <div>
-          <p class="font-mono text-sm text-muted-foreground mb-1">{entry.period}</p>
-          <p class="font-medium mb-0">{entry.title}</p>
-          <p class="text-muted-foreground text-sm mt-1">{entry.description}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-
 </Layout>

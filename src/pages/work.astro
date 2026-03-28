@@ -16,7 +16,7 @@ import Layout from "../layouts/Layout.astro";
         {i > 0 && <hr class="mb-12" />}
         <h2 class="font-serif text-foreground">
           {project.url
-            ? <a href={project.url} target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">{project.title}</a>
+            ? <a href={project.url} target="_blank" rel="noopener noreferrer" class="text-foreground font-bold underline decoration-accent decoration-2 underline-offset-4 hover:decoration-secondary">{project.title}</a>
             : project.title}
         </h2>
         <p class="font-mono text-sm text-muted-foreground mt-1 mb-4">

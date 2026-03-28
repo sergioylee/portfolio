@@ -15,9 +15,11 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
   <div class="space-y-8">
     {posts.map((post) => (
       <article>
-        <a href={`/blog/${post.id.replace(/\.md$/, "")}`} class="font-serif text-foreground no-underline hover:text-accent">
+        <h2 class="font-serif text-foreground">
+          <a href={`/blog/${post.id.replace(/\.md$/, "")}`} class="text-foreground font-bold underline decoration-accent decoration-2 underline-offset-4 hover:decoration-secondary">
           {post.data.title}
         </a>
+        </h2>
         <p class="font-mono text-sm text-muted-foreground mt-1 mb-1">{post.data.date}</p>
         <p class="text-muted-foreground mt-0">{post.data.summary}</p>
       </article>

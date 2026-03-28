@@ -43,5 +43,6 @@ export const projects: Project[] = [
       "Built-in spell checking per language with custom whitelists for technical terms.",
       "Templating system so the same data renders into any design you write.",
     ],
+    url: "https://github.com/sergioylee/resumint",
   },
 ];
