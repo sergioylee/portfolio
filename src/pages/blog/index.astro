@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import { site } from "../../data/site";
+import Layout from "../../layouts/Layout.astro";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
+);
+---
+
+<Layout title={`Blog — ${site.name}`} description={`Writing by ${site.name}.`}>
+  <h1 class="font-serif mb-2">Blog</h1>
+  <p class="text-muted-foreground mb-10">Occasional writing on software and other things.</p>
+
+  <div class="space-y-8">
+    {posts.map((post) => (
+      <article>
+        <a href={`/blog/${post.id.replace(/\.md$/, "")}`} class="font-serif text-foreground no-underline hover:text-accent">
+          {post.data.title}
+        </a>
+        <p class="font-mono text-sm text-muted-foreground mt-1 mb-1">{post.data.date}</p>
+        <p class="text-muted-foreground mt-0">{post.data.summary}</p>
+      </article>
+    ))}
+  </div>
+</Layout>
