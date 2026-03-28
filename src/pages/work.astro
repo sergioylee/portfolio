@@ -18,11 +18,13 @@ import Layout from "../layouts/Layout.astro";
         <p class="font-mono text-sm text-muted-foreground mt-1 mb-4">
           {project.date} &nbsp;&mdash;&nbsp; {project.stack}
         </p>
-        <ul>
-          {project.bullets.map((bullet) => (
-            <li>{bullet}</li>
-          ))}
-        </ul>
+        {project.bullets.length > 0 && (
+          <ul>
+            {project.bullets.map((bullet) => (
+              <li>{bullet}</li>
+            ))}
+          </ul>
+        )}
       </section>
     ))}
   </div>

@@ -1,4 +1,5 @@
 ---
+import { education, experience } from "../data/experience";
 import { site } from "../data/site";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -34,74 +35,26 @@ import Layout from "../layouts/Layout.astro";
   <section class="mb-10">
     <h2 class="font-serif mb-4">Experience</h2>
     <div class="space-y-6">
-      <div>
-        <p class="font-mono text-sm text-muted-foreground mb-1">Jan 2026 – present</p>
-        <p class="font-medium mb-0">Tech Lead — SGS</p>
-        <p class="text-muted-foreground text-sm mt-1">
-          Didn't see this one coming. I got promoted mid-restructuring,
-          either a compliment or a warning sign. Turns out I'm pretty good at
-          communicating, prioritizing, and keeping things unblocked; skills I never particularly
-          wanted. I'd rather be deep in a debugger. Hoping I won't become yet another frustrated
-          engineer. I still get my hands dirty though, whenever
-          someone needs the heavy artillery B).
-        </p>
-      </div>
-      <div>
-        <p class="font-mono text-sm text-muted-foreground mb-1">Jan 2025 – Jan 2026</p>
-        <p class="font-medium mb-0">Full-Stack Developer — SGS</p>
-        <p class="text-muted-foreground text-sm mt-1">
-          Joined to modernize my stack. I didn't even know Git on day one, let alone .NET Core,
-          TypeScript, or Vue, yet, within a year I was leading the team. Corporate scale this time:
-          bigger codebases, bigger teams, bigger userbases, and the coordination overhead that
-          comes with all of that. Is migrating a massive legacy system while keeping it alive in production a sort of parenting?
-        </p>
-      </div>
-      <div>
-        <p class="font-mono text-sm text-muted-foreground mb-1">Apr 2023 – Jan 2025</p>
-        <p class="font-medium mb-0">Full-Stack Developer — FlashData</p>
-        <p class="text-muted-foreground text-sm mt-1">
-          Team of ~10 people, no frameworks, no off-the-shelf solutions, everything from scratch. The team was raw but that was its charm. Full ownership from requirements to maintenace, plenty of legacy code nobody had documented, and technologies most people would rather pretend don't exist. I learned more here than anywhere else.
-        </p>
-      </div>
-      <div>
-        <p class="font-mono text-sm text-muted-foreground mb-1">Nov 2021 – Apr 2023</p>
-        <p class="font-medium mb-0">Private Computer Science Teacher</p>
-        <p class="text-muted-foreground text-sm mt-1">
-          Moved to Spain and while work permit was in progress: taught what I already knew.
-          Tutored a dozen university students in C, C++ and Java, algorithms, and system programming while studying web development on the side.
-          Turns out people will pay you to explain pointers!
-        </p>
-      </div>
-      <div>
-        <p class="font-mono text-sm text-muted-foreground mb-1">June 2020 – Nov 2021</p>
-        <p class="font-medium mb-0">Cofounder — Thyrosgaming</p>
-        <p class="text-muted-foreground text-sm mt-1">
-          Started as a personal mission to game at 60fps on a tight budget. The pandemic hit,
-          demand for custom PCs exploded, and within three months my brother and I had cleared 100+ builds.
-          Taught me more about hardware, supply chains, and running a business than anything else.
-        </p>
-      </div>
+      {experience.map((entry) => (
+        <div>
+          <p class="font-mono text-sm text-muted-foreground mb-1">{entry.period}</p>
+          <p class="font-medium mb-0">{entry.title}</p>
+          <p class="text-muted-foreground text-sm mt-1">{entry.description}</p>
+        </div>
+      ))}
     </div>
   </section>
 
   <section class="mb-10">
     <h2 class="font-serif mb-4">Education</h2>
     <div class="space-y-6">
-      <div>
-        <p class="font-mono text-sm text-muted-foreground mb-1">Sep 2024 – Ongoing</p>
-        <p class="font-medium mb-0">B.Sc. Computer Science — Open University of Catalonia</p>
-        <p class="text-muted-foreground text-sm mt-1">I want a phd.</p>
-      </div>
-      <div>
-        <p class="font-mono text-sm text-muted-foreground mb-1">Nov 2022 – Apr 2023</p>
-        <p class="font-medium mb-0">Course Full Stack Web Development — University of Helsinki</p>
-        <p class="text-muted-foreground text-sm mt-1">The one everyone recommends.</p>
-      </div>
-      <div>
-        <p class="font-mono text-sm text-muted-foreground mb-1">Mar 2019 – Nov 2021</p>
-        <p class="font-medium mb-0">B.Sc. Electronics Engineering — University of Buenos Aires</p>
-        <p class="text-muted-foreground text-sm mt-1">Dropped out for love.</p>
-      </div>
+      {education.map((entry) => (
+        <div>
+          <p class="font-mono text-sm text-muted-foreground mb-1">{entry.period}</p>
+          <p class="font-medium mb-0">{entry.title}</p>
+          <p class="text-muted-foreground text-sm mt-1">{entry.description}</p>
+        </div>
+      ))}
     </div>
   </section>
 

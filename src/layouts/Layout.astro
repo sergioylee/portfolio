@@ -9,17 +9,18 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  robots?: string;
 }
 
 const {
   title = site.name,
   description = `Welcome to ${site.name}'s portfolio`,
   ogImage = "/og.png",
+  robots = "index, follow",
 } = Astro.props;
 
-const canonicalURL = Astro.site
-  ? new URL(Astro.url.pathname, Astro.site)
-  : Astro.url;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
 
 const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 
@@ -43,7 +44,7 @@ const year = new Date().getFullYear();
     <link rel="preload" as="font" type="font/woff2" crossorigin href={monoRegular} />
     <meta name="description" content={description} />
     <meta name="author" content={site.name} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={robots} />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
@@ -51,7 +52,7 @@ const year = new Date().getFullYear();
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(ogImage, Astro.site ?? Astro.url)} />
+    <meta property="og:image" content={ogImageURL} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content={site.name} />
 
@@ -59,7 +60,7 @@ const year = new Date().getFullYear();
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(ogImage, Astro.site ?? Astro.url)} />
+    <meta name="twitter:image" content={ogImageURL} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

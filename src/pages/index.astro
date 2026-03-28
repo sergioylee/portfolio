@@ -3,8 +3,6 @@ import { projects } from "../data/projects";
 import { site } from "../data/site";
 import Layout from "../layouts/Layout.astro";
 
-const recentProjects = projects.slice(0, 5);
-
 const schema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -19,7 +17,7 @@ const schema = {
 };
 ---
 
-<Layout title={`${site.name}`}>
+<Layout title={site.name}>
   <h1 class="font-serif text-foreground mb-1">{site.name}</h1>
   <p class="font-mono text-sm text-muted-foreground mb-10">
     Software Engineer &mdash; {site.location}
@@ -50,7 +48,7 @@ const schema = {
   <section>
     <h2 class="font-serif mb-4">Recent work</h2>
     <ul>
-      {recentProjects.map((project) => (
+      {projects.map((project) => (
         <li>
           <a href={`/work#${project.id}`}>{project.title}</a>
           <span class="font-mono text-sm text-muted-foreground ml-2">{project.date}</span>

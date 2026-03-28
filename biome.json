@@ -25,10 +25,7 @@
     }
   },
   "linter": {
-    "enabled": false,
-    "rules": {
-      "recommended": true
-    }
+    "enabled": false
   },
   "javascript": {
     "formatter": {
