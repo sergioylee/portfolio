@@ -1,13 +1,4 @@
-export interface Project {
-  id: string;
-  title: string;
-  date: string;
-  stack: string;
-  bullets: string[];
-  url?: string;
-}
-
-export const projects: Project[] = [
+export const projects = [
   {
     id: "industrias-proba-sa",
     title: "Industrias Proba SA Website",
@@ -20,7 +11,7 @@ export const projects: Project[] = [
     id: "portfolio",
     title: "Portfolio Website",
     date: "2026",
-    stack: "Astro, TailwindCSS, TypeScript",
+    stack: "Astro, TailwindCSS, JavaScript",
     bullets: [
       "Minimalist static personal site built with performance and privacy in mind.",
       "No analytics, no trackers, no unnecessary JavaScript.",

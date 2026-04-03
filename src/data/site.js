@@ -6,4 +6,4 @@ export const site = {
   github: "sergioylee",
   mastodon: "yergios",
   x: "yergios",
-} as const;
+};

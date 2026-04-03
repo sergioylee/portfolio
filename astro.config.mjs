@@ -1,7 +1,7 @@
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
-import { site } from "./src/data/site.ts";
+import { site } from "./src/data/site.js";
 
 // https://astro.build/config
 export default defineConfig({
