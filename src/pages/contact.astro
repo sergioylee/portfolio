@@ -26,6 +26,30 @@ import Layout from "../layouts/Layout.astro";
           </a>
         </dd>
       </div>
+      <div class="flex gap-4 items-baseline">
+        <dt class="font-mono text-sm text-muted-foreground w-20 shrink-0">Codeberg</dt>
+        <dd class="m-0">
+          <a href={`https://codeberg.org/${site.codeberg}`} target="_blank" rel="noopener noreferrer">
+            codeberg.org/{site.codeberg}
+          </a>
+        </dd>
+      </div>
+      <div class="flex gap-4 items-baseline">
+        <dt class="font-mono text-sm text-muted-foreground w-20 shrink-0">Mastodon</dt>
+        <dd class="m-0">
+          <a href={`https://mastodon.social/@${site.mastodon}`} target="_blank" rel="noopener noreferrer">
+            mastodon.social/@{site.mastodon}
+          </a>
+        </dd>
+      </div>
+      <div class="flex gap-4 items-baseline">
+        <dt class="font-mono text-sm text-muted-foreground w-20 shrink-0">X</dt>
+        <dd class="m-0">
+          <a href={`https://x.com/${site.x}`} target="_blank" rel="noopener noreferrer">
+            x.com/{site.x}
+          </a>
+        </dd>
+      </div>
     </dl>
   </section>
 
