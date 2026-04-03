@@ -12,11 +12,15 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: site.name,
+  alternateName: ["Sergio Lee", "Sergio Y Lee", "yergios"],
   url: Astro.site?.toString(),
   email: `mailto:${site.email}`,
   jobTitle: "Software Engineer",
   sameAs: [
     `https://github.com/${site.github}`,
+    `https://codeberg.org/${site.codeberg}`,
+    `https://x.com/${site.x}`,
+    `https://mastodon.social/@${site.mastodon}`,
   ],
 };
 ---
