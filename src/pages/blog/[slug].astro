@@ -31,18 +31,28 @@ const { Content } = await render(post);
 
   <nav aria-label="Post navigation" class="mt-16 pt-8 flex justify-between gap-4">
     <div>
-      {prev && (
-        <a href={`/blog/${prev.id.replace(/\.md$/, "")}`} class="font-mono text-sm text-muted-foreground no-underline hover:text-secondary">
-          &larr; {prev.data.title}
-        </a>
-      )}
+      {
+        prev && (
+          <a
+            href={`/blog/${prev.id.replace(/\.md$/, "")}`}
+            class="font-mono text-sm text-muted-foreground no-underline hover:text-secondary"
+          >
+            &larr; {prev.data.title}
+          </a>
+        )
+      }
     </div>
     <div>
-      {next && (
-        <a href={`/blog/${next.id.replace(/\.md$/, "")}`} class="font-mono text-sm text-muted-foreground no-underline hover:text-secondary">
-          {next.data.title} &rarr;
-        </a>
-      )}
+      {
+        next && (
+          <a
+            href={`/blog/${next.id.replace(/\.md$/, "")}`}
+            class="font-mono text-sm text-muted-foreground no-underline hover:text-secondary"
+          >
+            {next.data.title} &rarr;
+          </a>
+        )
+      }
     </div>
   </nav>
 </Layout>

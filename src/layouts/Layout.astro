@@ -34,7 +34,14 @@ const year = new Date().getFullYear();
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preload" as="font" type="font/woff2" crossorigin fetchpriority="high" href={serifRegular} />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      fetchpriority="high"
+      href={serifRegular}
+    />
     <link rel="preload" as="font" type="font/woff2" crossorigin href={serifBold} />
     <link rel="preload" as="font" type="font/woff2" crossorigin href={monoRegular} />
     <meta name="description" content={description} />
@@ -74,22 +81,26 @@ const year = new Date().getFullYear();
         <header class="mb-12">
           <nav aria-label="Main navigation">
             <ul class="flex flex-wrap gap-x-6 gap-y-1 list-none p-0 m-0">
-              {NAV_LINKS.map(({ href, label }) => {
-                const isActive = pathname === href;
-                return (
-                  <li class="m-0">
-                    <a
-                      href={href}
-                      class={isActive
-                        ? "no-underline font-serif text-foreground font-medium cursor-default"
-                        : "font-serif text-accent hover:text-secondary"}
-                      aria-current={isActive ? "page" : undefined}
-                    >
-                      {label}
-                    </a>
-                  </li>
-                );
-              })}
+              {
+                NAV_LINKS.map(({ href, label }) => {
+                  const isActive = pathname === href;
+                  return (
+                    <li class="m-0">
+                      <a
+                        href={href}
+                        class={
+                          isActive
+                            ? "no-underline font-serif text-foreground font-medium cursor-default"
+                            : "font-serif text-accent hover:text-secondary"
+                        }
+                        aria-current={isActive ? "page" : undefined}
+                      >
+                        {label}
+                      </a>
+                    </li>
+                  );
+                })
+              }
             </ul>
           </nav>
         </header>
@@ -100,7 +111,8 @@ const year = new Date().getFullYear();
 
         <footer class="mt-16 pt-8 border-t border-border">
           <p class="font-mono text-sm text-muted-foreground m-0">
-            &copy; {year} {site.name}
+            &copy; {year}
+            {site.name}
           </p>
         </footer>
       </div>

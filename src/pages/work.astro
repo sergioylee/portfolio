@@ -11,25 +11,36 @@ import Layout from "../layouts/Layout.astro";
   </p>
 
   <div class="space-y-12">
-    {projects.map((project, i) => (
-      <section id={project.id}>
-        {i > 0 && <hr class="mb-12" />}
-        <div class="font-serif text-xl text-foreground">
-          {project.url
-            ? <a href={project.url} target="_blank" rel="noopener noreferrer" class="text-foreground underline decoration-accent-muted decoration-2 underline-offset-4 hover:decoration-secondary">{project.title}</a>
-            : project.title}
-        </div>
-        <p class="font-mono text-sm text-muted-foreground mt-2 mb-4">
-          {project.date} &nbsp;&mdash;&nbsp; {project.stack}
-        </p>
-        {project.bullets.length > 0 && (
-          <ul>
-            {project.bullets.map((bullet) => (
-              <li>{bullet}</li>
-            ))}
-          </ul>
-        )}
-      </section>
-    ))}
+    {
+      projects.map((project, i) => (
+        <section id={project.id}>
+          {i > 0 && <hr class="mb-12" />}
+          <div class="font-serif text-xl text-foreground">
+            {project.url ? (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-foreground underline decoration-accent-muted decoration-2 underline-offset-4 hover:decoration-secondary"
+              >
+                {project.title}
+              </a>
+            ) : (
+              project.title
+            )}
+          </div>
+          <p class="font-mono text-sm text-muted-foreground mt-2 mb-4">
+            {project.date} &nbsp;&mdash;&nbsp; {project.stack}
+          </p>
+          {project.bullets.length > 0 && (
+            <ul>
+              {project.bullets.map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))
+    }
   </div>
 </Layout>

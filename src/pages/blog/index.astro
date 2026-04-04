@@ -13,17 +13,22 @@ const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort(
   <p class="text-muted-foreground mb-10">Occasional writing on software and other things.</p>
 
   <div class="space-y-12">
-    {posts.map((post, i) => (
-      <section>
-        {i > 0 && <hr class="mb-12" />}
-        <div class="font-serif text-xl text-foreground">
-          <a href={`/blog/${post.id.replace(/\.md$/, "")}`} class="text-foreground underline decoration-accent-muted decoration-2 underline-offset-4 hover:decoration-secondary">
-            {post.data.title}
-          </a>
-        </div>
-        <p class="font-mono text-sm text-muted-foreground mt-2 mb-4">{post.data.date}</p>
-        <p class="text-muted-foreground mt-0">{post.data.summary}</p>
-      </section>
-    ))}
+    {
+      posts.map((post, i) => (
+        <section>
+          {i > 0 && <hr class="mb-12" />}
+          <div class="font-serif text-xl text-foreground">
+            <a
+              href={`/blog/${post.id.replace(/\.md$/, "")}`}
+              class="text-foreground underline decoration-accent-muted decoration-2 underline-offset-4 hover:decoration-secondary"
+            >
+              {post.data.title}
+            </a>
+          </div>
+          <p class="font-mono text-sm text-muted-foreground mt-2 mb-4">{post.data.date}</p>
+          <p class="text-muted-foreground mt-0">{post.data.summary}</p>
+        </section>
+      ))
+    }
   </div>
 </Layout>

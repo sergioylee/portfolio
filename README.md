@@ -9,7 +9,9 @@ Built with [Astro](https://astro.build), [Tailwind CSS v4](https://tailwindcss.c
 - **Astro 5** — static site generation, zero JS by default
 - **Tailwind CSS 4** — utility-first styling, configured entirely in CSS
 - **IBM Plex Serif + Mono** — self-hosted, Latin subset only
-- **Biome** — formatting (JS/TS linting disabled)
+- **Prettier** + `prettier-plugin-astro` — formatting for JS, CSS, and Astro
+- **ESLint** + `eslint-plugin-astro` — linting for JS and Astro
+- **Stylelint** + `stylelint-config-standard` — linting for CSS
 - **@astrojs/sitemap** — auto-generated `sitemap.xml` at build time
 - **pnpm** — package manager
 
@@ -55,14 +57,14 @@ pnpm dev
 
 ## Commands
 
-| Command        | Description                         |
-| -------------- | ----------------------------------- |
-| `pnpm dev`     | Start dev server at `localhost:3000` |
-| `pnpm build`   | Build for production                |
-| `pnpm preview` | Preview the production build locally |
-| `pnpm check`   | Format and lint with Biome          |
-| `pnpm format`  | Format files only                   |
-| `pnpm lint`    | Lint files only                     |
+| Command        | Description                                |
+| -------------- | ------------------------------------------ |
+| `pnpm dev`     | Start dev server at `localhost:3000`       |
+| `pnpm build`   | Build for production                       |
+| `pnpm preview` | Preview the production build locally       |
+| `pnpm format`  | Format all files with Prettier             |
+| `pnpm lint`    | Lint JS/Astro (ESLint) and CSS (Stylelint) |
+| `pnpm check`   | Prettier check + ESLint + Stylelint        |
 
 ## License
 
