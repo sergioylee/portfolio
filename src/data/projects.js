@@ -12,11 +12,7 @@ export const projects = [
     title: "Portfolio Website",
     date: "2026",
     stack: "Astro, TailwindCSS, JavaScript",
-    bullets: [
-      "Minimalist static personal site built with performance and privacy in mind.",
-      "No analytics, no trackers, no unnecessary JavaScript.",
-      "Hosted on Cloudflare Pages.",
-    ],
+    bullets: ["Minimalist static personal site.", "Hosted on Cloudflare Pages."],
     url: "https://github.com/sergioylee/portfolio",
   },
   {
