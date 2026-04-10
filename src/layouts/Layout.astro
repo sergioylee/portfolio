@@ -105,7 +105,8 @@ const year = new Date().getFullYear();
           </nav>
 
           <button
-            class="font-mono text-sm text-muted-foreground cursor-pointer hover:text-secondary"
+            id="change-theme-btn"
+            class="font-mono text-sm text-muted-foreground cursor-pointer hover:text-foreground"
             title="Change theme"
           >
             light
@@ -124,5 +125,12 @@ const year = new Date().getFullYear();
         </footer>
       </div>
     </div>
-  </body>
+  </body><script>
+    const changeThemeBtn = document.getElementById("change-theme-btn");
+    changeThemeBtn?.addEventListener("click", function () {
+      const html = document.documentElement;
+      html?.classList.toggle("light");
+      changeThemeBtn.innerText = changeThemeBtn.innerText === "light" ? "dark" : "light";
+    });
+  </script>
 </html>

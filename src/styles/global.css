@@ -6,16 +6,28 @@
 /* ─── Design tokens ─────────────────────────────────────────────────────── */
 
 @theme {
-  --color-background: hsl(0 0% 98%);
-  --color-foreground: hsl(0 0% 7%);
-  --color-muted-foreground: hsl(0 0% 33%);
-  --color-accent: hsl(228 100% 40%);
-  --color-accent-muted: hsl(228 60% 55%);
-  --color-secondary: hsl(38 90% 48%);
-  --color-border: hsl(0 0% 85%);
+  --color-background: #141218;
+  --color-foreground: #e6e0e9;
+  --color-muted-foreground: #938f99;
+  --color-accent: #5e7bed;
+  --color-accent-muted: #4763d1;
+  --color-secondary: #e66100;
+  --color-secondary-muted: #c64600;
+  --color-border: #49454f;
   --font-serif: "IBM Plex Serif", georgia, serif;
   --font-mono: "IBM Plex Mono", "Courier New", monospace;
   --max-width-column: 680px;
+}
+
+html.light {
+  --color-background: #fef7ff;
+  --color-foreground: #1d1b20;
+  --color-muted-foreground: #79747e;
+  --color-accent: #0029cc;
+  --color-accent-muted: #4763d1;
+  --color-secondary: #c64600;
+  --color-secondary-muted: #e66100;
+  --color-border: #cac4d0;
 }
 
 /* ─── Base resets ───────────────────────────────────────────────────────── */
