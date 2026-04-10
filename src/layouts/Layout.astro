@@ -78,7 +78,7 @@ const year = new Date().getFullYear();
   <body>
     <div class="min-h-screen bg-background">
       <div class="mx-auto max-w-column px-6 py-12 md:py-16">
-        <header class="mb-12">
+        <header class="mb-12 flex justify-between">
           <nav aria-label="Main navigation">
             <ul class="flex flex-wrap gap-x-6 gap-y-1 list-none p-0 m-0">
               {
@@ -103,6 +103,13 @@ const year = new Date().getFullYear();
               }
             </ul>
           </nav>
+
+          <button
+            class="font-mono text-sm text-muted-foreground cursor-pointer hover:text-secondary"
+            title="Change theme"
+          >
+            light
+          </button>
         </header>
 
         <main>
