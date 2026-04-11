@@ -149,3 +149,13 @@ textarea,
 select {
   font: inherit;
 }
+
+/* ─── Theme toggle ──────────────────────────────────────────────────────── */
+
+html.dark #change-theme-btn::before {
+  content: "light";
+}
+
+html.light #change-theme-btn::before {
+  content: "dark";
+}

@@ -30,7 +30,7 @@ const { Content } = await render(post);
   </article>
 
   <nav aria-label="Post navigation" class="mt-16 pt-8 flex justify-between gap-4">
-    <div>
+    <div title="Previous blog post">
       {
         prev && (
           <a
@@ -42,7 +42,7 @@ const { Content } = await render(post);
         )
       }
     </div>
-    <div>
+    <div title="Next blog post">
       {
         next && (
           <a

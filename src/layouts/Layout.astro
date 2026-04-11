@@ -75,10 +75,13 @@ const year = new Date().getFullYear();
     <title>{title}</title>
     <ClientRouter />
     <script is:inline>
+      const THEMES = ["dark", "light"];
+      const DEFAULT_THEME = THEMES[0];
+
       function applyTheme() {
-        const currentTheme = localStorage.theme || "dark";
-        document.documentElement.classList.remove("light", "dark");
-        document.documentElement.classList.add(currentTheme);
+        const theme = localStorage.theme || DEFAULT_THEME;
+        document.documentElement.classList.remove(...THEMES);
+        document.documentElement.classList.add(theme);
       }
 
       document.addEventListener("astro:after-swap", applyTheme);
@@ -94,9 +97,9 @@ const year = new Date().getFullYear();
             <button
               id="change-theme-btn"
               class="font-mono text-sm text-muted-foreground cursor-pointer hover:text-foreground"
+              aria-label="Toggle theme"
               title="Change theme"
-            >
-            </button>
+            ></button>
           </div>
           <nav aria-label="Main navigation">
             <ul class="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-1 list-none p-0 m-0">
@@ -137,24 +140,30 @@ const year = new Date().getFullYear();
       </div>
     </div>
   </body><script>
-    function setupChangeThemeBtn() {
-      const changeThemeBtn = document.getElementById("change-theme-btn");
-      if (changeThemeBtn) {
-        // Set initial text content
-        changeThemeBtn.textContent = localStorage.theme === "light" ? "dark" : "light";
+    const THEMES = ["dark", "light"];
+    const DEFAULT_THEME = THEMES[0];
 
-        // Add event listener for click behavior
-        changeThemeBtn.addEventListener("click", function () {
-          const newTheme = localStorage.theme === "light" ? "dark" : "light";
-          localStorage.theme = newTheme;
-          document.documentElement.classList.remove("light", "dark");
-          document.documentElement.classList.add(newTheme);
-          changeThemeBtn.textContent = newTheme === "light" ? "dark" : "light";
-        });
+    function setupThemeToggle() {
+      const btn = document.getElementById("change-theme-btn");
+      if (!btn) return;
+
+      function syncButton(theme) {
+        const target = THEMES.find((t) => t !== theme);
+        btn.setAttribute("aria-label", `Switch to ${target} theme`);
       }
+
+      syncButton(localStorage.theme || DEFAULT_THEME);
+
+      btn.addEventListener("click", () => {
+        const newTheme = THEMES.find((t) => t !== (localStorage.theme || DEFAULT_THEME));
+        localStorage.theme = newTheme;
+        document.documentElement.classList.remove(...THEMES);
+        document.documentElement.classList.add(newTheme);
+        syncButton(newTheme);
+      });
     }
 
-    document.addEventListener("astro:after-swap", setupChangeThemeBtn);
-    setupChangeThemeBtn();
+    document.addEventListener("astro:after-swap", setupThemeToggle);
+    setupThemeToggle();
   </script>
 </html>
