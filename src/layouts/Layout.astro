@@ -74,8 +74,17 @@ const year = new Date().getFullYear();
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ClientRouter />
-  </head>
-  <body>
+    <script is:inline>
+      function applyTheme() {
+        const currentTheme = localStorage.theme || "dark";
+        document.documentElement.classList.remove("light", "dark");
+        document.documentElement.classList.add(currentTheme);
+      }
+
+      document.addEventListener("astro:after-swap", applyTheme);
+      applyTheme();
+    </script>
+  </head><body>
     <div class="min-h-screen bg-background">
       <div class="mx-auto max-w-column px-6 py-12 md:py-16">
         <header class="mb-12 flex justify-between">
@@ -109,7 +118,6 @@ const year = new Date().getFullYear();
             class="font-mono text-sm text-muted-foreground cursor-pointer hover:text-foreground"
             title="Change theme"
           >
-            light
           </button>
         </header>
 
@@ -126,11 +134,24 @@ const year = new Date().getFullYear();
       </div>
     </div>
   </body><script>
-    const changeThemeBtn = document.getElementById("change-theme-btn");
-    changeThemeBtn?.addEventListener("click", function () {
-      const html = document.documentElement;
-      html?.classList.toggle("light");
-      changeThemeBtn.innerText = changeThemeBtn.innerText === "light" ? "dark" : "light";
-    });
+    function setupChangeThemeBtn() {
+      const changeThemeBtn = document.getElementById("change-theme-btn");
+      if (changeThemeBtn) {
+        // Set initial text content
+        changeThemeBtn.textContent = localStorage.theme === "light" ? "dark" : "light";
+
+        // Add event listener for click behavior
+        changeThemeBtn.addEventListener("click", function () {
+          const newTheme = localStorage.theme === "light" ? "dark" : "light";
+          localStorage.theme = newTheme;
+          document.documentElement.classList.remove("light", "dark");
+          document.documentElement.classList.add(newTheme);
+          changeThemeBtn.textContent = newTheme === "light" ? "dark" : "light";
+        });
+      }
+    }
+
+    document.addEventListener("astro:after-swap", setupChangeThemeBtn);
+    setupChangeThemeBtn();
   </script>
 </html>
