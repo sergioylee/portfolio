@@ -35,4 +35,16 @@ export const projects = [
     ],
     url: "https://github.com/sergioylee/resumint",
   },
+  {
+    id: "mos6502",
+    title: "MOS 6502 processor emulator",
+    date: 2019,
+    stack: "C, Makefile",
+    bullets: [
+      "All 56 official instructions with accurate cycle timing",
+      "Immediate, absolute, zero page, indexed and indirect variants of addressing modes",
+      "Character output and program halt capabilities",
+    ],
+    url: "https://github.com/sergioylee/mos6502",
+  },
 ];

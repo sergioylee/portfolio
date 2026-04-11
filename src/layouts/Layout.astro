@@ -23,10 +23,11 @@ const NAV_LINKS = [
   { href: "/contact", label: "Contact" },
 ];
 
-const year = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
+const displayYear =
+  currentYear > site.startYear ? `${site.startYear}—${currentYear}` : `${site.startYear}`;
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -119,7 +120,7 @@ const year = new Date().getFullYear();
 
         <footer class="mt-16 pt-8 border-t border-border">
           <p class="font-mono text-sm text-muted-foreground m-0">
-            &copy; {year}
+            &copy; {displayYear}
             {site.name}
           </p>
         </footer>
