@@ -84,12 +84,22 @@ const year = new Date().getFullYear();
       document.addEventListener("astro:after-swap", applyTheme);
       applyTheme();
     </script>
-  </head><body>
+  </head>
+  <body>
     <div class="min-h-screen bg-background">
       <div class="mx-auto max-w-column px-6 py-12 md:py-16">
-        <header class="mb-12 flex justify-between">
+        <header class="mb-12">
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-serif font-medium text-lg text-foreground">{site.name}</span>
+            <button
+              id="change-theme-btn"
+              class="font-mono text-sm text-muted-foreground cursor-pointer hover:text-foreground"
+              title="Change theme"
+            >
+            </button>
+          </div>
           <nav aria-label="Main navigation">
-            <ul class="flex flex-wrap gap-x-6 gap-y-1 list-none p-0 m-0">
+            <ul class="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-1 list-none p-0 m-0">
               {
                 NAV_LINKS.map(({ href, label }) => {
                   const isActive = pathname === href;
@@ -112,13 +122,6 @@ const year = new Date().getFullYear();
               }
             </ul>
           </nav>
-
-          <button
-            id="change-theme-btn"
-            class="font-mono text-sm text-muted-foreground cursor-pointer hover:text-foreground"
-            title="Change theme"
-          >
-          </button>
         </header>
 
         <main>
