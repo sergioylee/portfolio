@@ -15,8 +15,6 @@
     "check": "prettier --check . && eslint . && stylelint \"src/**/*.css\""
   },
   "dependencies": {
-    "@fontsource/ibm-plex-mono": "5.2.7",
-    "@fontsource/ibm-plex-serif": "5.2.7",
     "@tailwindcss/vite": "4.2.1",
     "astro": "5.16.16",
     "tailwindcss": "4.2.1"
