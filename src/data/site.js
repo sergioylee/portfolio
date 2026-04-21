@@ -4,7 +4,7 @@ export const site = {
   name: "Sergio Y. Lee",
   email: "business@sergioylee.com",
   codeberg: "yergios",
-  github: "sergioylee",
+  github: "yergios",
   mastodon: "yergios",
   x: "yergios",
 };
