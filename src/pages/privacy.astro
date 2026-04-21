@@ -1,0 +1,42 @@
+---
+import { site } from "../data/site";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title={`Privacy Policy — ${site.name}`}
+  description={`Privacy policy for ${site.name}'s personal website.`}
+  robots="noindex, follow"
+>
+  <h1 class="font-serif mb-2">Privacy Policy</h1>
+
+  <p class="text-muted-foreground font-mono text-sm mb-10">Last updated: April 2026</p>
+
+  <section class="mb-8">
+    <h2>What I collect</h2>
+    <p>
+      This site uses <a
+        href="https://www.cloudflare.com/web-analytics/"
+        target="_blank"
+        rel="noopener noreferrer">Cloudflare Web Analytics</a
+      > to understand how many people visit and which pages they read. It collects no cookies and no personal
+      data. I cannot identify individual visitors.
+    </p>
+    <p>
+      The data collected is limited to: page views, referrer domain, country, browser type, and
+      device type — all aggregated and anonymised at the source.
+    </p>
+  </section>
+
+  <section class="mb-8">
+    <h2>Third parties</h2>
+    <p>
+      Cloudflare serves and hosts this site. Their handling of infrastructure-level data (IP
+      addresses, request logs) is governed by the <a
+        href="https://www.cloudflare.com/privacypolicy/"
+        target="_blank"
+        rel="noopener noreferrer">Cloudflare Privacy Policy</a
+      >.
+    </p>
+  </section>
+</Layout>

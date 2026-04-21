@@ -13,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
       <div class="flex gap-4 items-baseline">
         <dt class="font-mono text-sm text-muted-foreground w-20 shrink-0">Email</dt>
         <dd class="m-0">
-          <a href={`mailto:${site.email}`}>{site.email}</a>
+          <a href={`mailto:${site.email}`} rel="noopener noreferrer">{site.email}</a>
         </dd>
       </div>
       <div class="flex gap-4 items-baseline">
