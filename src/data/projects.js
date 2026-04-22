@@ -3,7 +3,7 @@ export const projects = [
     id: "industrias-proba-sa",
     title: "Industrias Proba SA Website",
     date: "2026",
-    stack: "Astro, TailwindCSS, DaisyUI",
+    stack: "Astro, TailwindCSS, TinaCMS",
     bullets: [],
     url: "https://github.com/industriasproba/industriasproba-web",
   },
