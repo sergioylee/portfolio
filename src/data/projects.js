@@ -4,15 +4,15 @@ export const projects = [
     title: "Industrias Proba SA Website",
     date: "2026",
     stack: "Astro, TailwindCSS, TinaCMS",
-    bullets: [],
-    url: "https://github.com/industriasproba/industriasproba-web",
+    bullets: ["Content based company website.", "Minimal external dependencies."],
+    url: "https://industriasproba.com.ar",
   },
   {
     id: "portfolio",
     title: "Portfolio Website",
     date: "2026",
     stack: "Astro, TailwindCSS, JavaScript",
-    bullets: ["Minimalist static personal site.", "Hosted on Cloudflare Pages."],
+    bullets: ["Minimal, lightweight static personal site."],
     url: "https://github.com/sergioylee/portfolio",
   },
   {
@@ -20,7 +20,7 @@ export const projects = [
     title: "Lens Neovim Plugin",
     date: "2025",
     stack: "Lua",
-    bullets: [],
+    bullets: ["Lua based nvim plugin to pin highlights on visual selections for easier focus."],
     url: "https://github.com/sergioylee/lens.nvim",
   },
   {
