@@ -4,24 +4,20 @@ export const projects = [
     title: "Industrias Proba SA Website",
     date: "2026",
     stack: "Astro, TailwindCSS, TinaCMS",
-    bullets: ["Content based company website.", "Minimal external dependencies."],
+    bullets: [
+      "Content based company website.",
+      "Minimal external dependencies.",
+      "Self manageable content through headless CMS.",
+    ],
     url: "https://industriasproba.com.ar",
-  },
-  {
-    id: "portfolio",
-    title: "Portfolio Website",
-    date: "2026",
-    stack: "Astro, TailwindCSS, JavaScript",
-    bullets: ["Minimal, lightweight static personal site."],
-    url: "https://github.com/sergioylee/portfolio",
   },
   {
     id: "lens-nvim",
     title: "Lens Neovim Plugin",
     date: "2025",
     stack: "Lua",
-    bullets: ["Lua based nvim plugin to pin highlights on visual selections for easier focus."],
-    url: "https://github.com/sergioylee/lens.nvim",
+    bullets: ["Pin multiple highlights on visual selections for easier focus."],
+    url: "https://github.com/yergios/lens.nvim",
   },
   {
     id: "resumint",
@@ -33,7 +29,7 @@ export const projects = [
       "Built-in spell checking per language with custom whitelists for technical terms.",
       "Templating system so the same data renders into any design you write.",
     ],
-    url: "https://github.com/sergioylee/resumint",
+    url: "https://github.com/yergios/resumint",
   },
   {
     id: "mos6502",
@@ -45,6 +41,6 @@ export const projects = [
       "Immediate, absolute, zero page, indexed and indirect variants of addressing modes",
       "Character output and program halt capabilities",
     ],
-    url: "https://github.com/sergioylee/mos6502",
+    url: "https://github.com/yergios/mos6502",
   },
 ];
